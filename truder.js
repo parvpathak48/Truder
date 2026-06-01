@@ -7,7 +7,7 @@ const products = {
       "Strong, flexible HDPE/LDPE bags in custom sizes for retail, industrial, and e-commerce.",
     desc: "If your business needs reliable, cost-effective polybags at scale, Truder Packaging has you covered. We manufacture polybags in a wide variety of sizes, thicknesses, and finishes to suit retail packaging, industrial storage, e-commerce fulfilment, and more. Our polybags are made from high-quality LDPE and HDPE materials, giving them the strength to protect your products without adding unnecessary weight. Custom printing is handled in-house — your brand, your colours, your logo.",
     img: "https://www.truderpackaging.com/img/frame1.webp",
-    emoji: "🛍️",
+    emoji: '<i class="fa-solid fa-bag-shopping"></i>',
     specs: [
       ["Material", "LDPE / HDPE"],
       ["Thickness", "Custom GSM"],
@@ -29,7 +29,7 @@ const products = {
       "Lightweight, tamper-evident courier bags built for e-commerce shipping with custom branding.",
     desc: "Running an e-commerce business? Your packaging is the first physical impression your customer gets. Truder's poly mailers are lightweight, tear-resistant, and waterproof — everything your courier bags need to be. We manufacture tamper-evident poly mailers with permanent self-seal strips, so your shipments stay secure from warehouse to doorstep. Available in custom sizes and with full-colour printing to reinforce your brand.",
     img: "https://www.truderpackaging.com/img/poly mailer.jpg",
-    emoji: "📬",
+    emoji: '<i class="fa-solid fa-envelope-open-text"></i>',
     specs: [
       ["Seal Type", "Tamper-evident self-seal"],
       ["Feature", "Waterproof & tear-resistant"],
@@ -51,7 +51,7 @@ const products = {
       "Heavy-duty plastic liners with custom branding for industrial and commercial use.",
     desc: "Truder Packaging manufactures heavy-duty printed liners designed for industrial and commercial applications. These liners serve as inner packaging to protect bulk goods during storage and transit, and with custom printing, they double as a powerful branding tool. Made from robust LDPE film, our printed liners offer excellent strength, moisture resistance, and consistent quality. Available in custom widths, lengths, and thicknesses.",
     img: "https://www.truderpackaging.com/img/frame3.webp",
-    emoji: "🗂️",
+    emoji: '<i class="fa-solid fa-layer-group"></i>',
     specs: [
       ["Material", "LDPE Film"],
       ["Width", "Custom widths"],
@@ -73,7 +73,7 @@ const products = {
       "High-clarity shrink film with excellent shrink performance and custom printing for branded packaging.",
     desc: "Our printed shrink rolls are designed for businesses that need high-clarity, form-fitting packaging with a professional branded look. The film shrinks tightly around products when heat is applied, creating a clean, tamper-evident seal that looks great on shelves. Made from premium POF or PVC material, offering excellent transparency and shrink performance.",
     img: "https://www.truderpackaging.com/img/frame4.webp",
-    emoji: "🌀",
+    emoji: '<i class="fa-solid fa-boxes-packing"></i>',
     specs: [
       ["Material", "POF / PVC Film"],
       ["Clarity", "High clarity"],
@@ -95,7 +95,7 @@ const products = {
       "Thick, puncture-resistant garbage bags for household, commercial, and industrial use.",
     desc: "Truder Packaging manufactures durable, puncture-resistant garbage bags for homes, offices, hotels, hospitals, and industrial facilities. Our bags are thick enough to hold heavy waste without tearing, making them reliable for daily use. Available in multiple sizes (small, medium, large, jumbo) and in roll or flat-pack formats. Star seal and flat seal variants available.",
     img: "https://www.truderpackaging.com/img/gbags.jpg",
-    emoji: "🗑️",
+    emoji: '<i class="fa-solid fa-trash-can"></i>',
     specs: [
       ["Seal", "Star seal & flat seal"],
       ["Colours", "Black, green, custom"],
@@ -117,7 +117,7 @@ const products = {
       "Heavy-duty Low Density Polyethylene rolls for construction, warehousing, and agriculture.",
     desc: "For heavy-duty industrial packaging, Truder's LDPE Industrial Rolls are the reliable choice. These wide, strong plastic films are used across construction, manufacturing, agriculture, and warehousing to wrap, protect, and store large goods. Our industrial rolls are manufactured from high-quality LDPE resin, offering excellent puncture resistance, flexibility, and moisture barrier properties.",
     img: "https://www.truderpackaging.com/img/industrial roll.jpg",
-    emoji: "🔩",
+    emoji: '<i class="fa-solid fa-gear"></i>',
     specs: [
       ["Material", "LDPE Resin"],
       ["Width", "Custom widths"],
@@ -139,7 +139,7 @@ const products = {
       "Color-coded, leak-proof biomedical waste bags as per BMW Management Rules 2016 for healthcare facilities.",
     desc: "Truder Packaging manufactures biomedical waste bags that comply with India's Biomedical Waste Management Rules 2016. Our bags are color-coded, leak-proof, and made from materials that prevent contamination and ensure safe disposal. We supply to hospitals, nursing homes, diagnostic labs, dental clinics, veterinary facilities, and pharmaceutical units across Gujarat.",
     img: "https://www.truderpackaging.com/img/frame1.webp",
-    emoji: "🏥",
+    emoji: '<i class="fa-solid fa-hospital"></i>',
     specs: [
       ["Compliance", "BMW Rules 2016"],
       ["Colour Code", "Yellow/Red/Blue/White"],
@@ -161,7 +161,7 @@ const products = {
       "Soft, hygienic packaging bags for diaper manufacturers and baby product brands. Plain and printed.",
     desc: "Truder Packaging supplies soft, hygienic, and attractive diaper bags for diaper manufacturers, baby product brands, and maternity hospitals. Our diaper bags are made from food-grade, safe plastic materials that are gentle on sensitive baby products. Available in plain and fully printed variants with custom sizes, zip-lock options, and resealable designs on request.",
     img: "https://www.truderpackaging.com/img/frame3.webp",
-    emoji: "👶",
+    emoji: '<i class="fa-solid fa-baby"></i>',
     specs: [
       ["Material", "Food-grade plastic"],
       ["Print", "Plain & custom printed"],
@@ -198,9 +198,12 @@ function showProductDetail(key) {
   document.getElementById("detail-h1").textContent = p.h1;
   document.getElementById("detail-desc").textContent = p.desc;
 
-  // Image
+  // FIXED: CSS Layering instead of onerror injection
   const imgEl = document.getElementById("detail-img");
-  imgEl.innerHTML = `<img src="${p.img}" alt="${p.h1}" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=\\'font-size:80px;opacity:0.4\\'>${p.emoji}</div>'" style="width:100%;height:100%;object-fit:cover">`;
+  imgEl.innerHTML = `
+    <div style="position: absolute; font-size: 80px; opacity: 0.4;">${p.emoji}</div>
+    <img src="${p.img}" alt="${p.h1}" onerror="this.style.display='none'" style="width:100%; height:100%; object-fit:cover; position:relative; z-index:1;">
+  `;
 
   // Specs
   const specsEl = document.getElementById("detail-specs");
@@ -227,9 +230,11 @@ function showProductDetail(key) {
 
 function buildProductCard(key) {
   const p = products[key];
+  // FIXED: CSS Layering instead of onerror injection
   return `<div class="product-card" onclick="showProductDetail('${key}')">
     <div class="product-card-img">
-      <img src="${p.img}" alt="${p.name} manufacturer Vadodara" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\\'product-emoji\\'>${p.emoji}</div>'">
+      <div class="product-emoji" style="position: absolute;">${p.emoji}</div>
+      <img src="${p.img}" alt="${p.name} manufacturer Vadodara" onerror="this.style.display='none'" style="position: relative; z-index: 1;">
     </div>
     <div class="product-card-body">
       <div class="product-card-tag">Durable &amp; Eco-Friendly</div>
@@ -239,7 +244,6 @@ function buildProductCard(key) {
     </div>
   </div>`;
 }
-
 // ── RENDER PRODUCT GRIDS ──
 document.getElementById("home-products-grid").innerHTML = productKeys
   .slice(0, 6)
