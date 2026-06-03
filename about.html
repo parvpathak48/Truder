@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Truder Packaging</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="truder.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo"><img src="truder-logo.webp" alt="Truder Packaging Industries"></a>
+    <nav id="main-nav">
+      <a href="/">Home</a>
+      <a href="/about">About Us</a>
+      <div class="nav-dropdown">
+        <a href="/products">Products</a>
+        <div class="dropdown-menu">
+          <a href="/product?id=polybags">Polybags</a>
+          <a href="/product?id=polymailers">Poly Mailers</a>
+          <a href="/product?id=printedliners">Printed Liners</a>
+          <a href="/product?id=shrinkrolls">Printed Shrink Rolls</a>
+          <a href="/product?id=garbagebags">Garbage Bags</a>
+          <a href="/product?id=ldpe">LDPE Industrial Rolls</a>
+          <a href="/product?id=biomedical">Biomedical Waste Bags</a>
+          <a href="/product?id=diaperbags">Diaper Bags</a>
+        </div>
+      </div>
+      <a href="/contact">Contact Us</a>
+    </nav>
+    <a href="/contact" class="header-cta">Get a Quote</a>
+    <div class="hamburger" onclick="toggleMobile()"><span></span><span></span><span></span></div>
+  </div>
+</header>
+<a href="https://web.whatsapp.com/send?phone=9408342280" class="whatsapp-float" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="tag">Our Story</div>
+        <h1>About <span>Truder Packaging</span></h1>
+        <p>Five decades of manufacturing excellence from the heart of Makarpura GIDC, Vadodara. Quality, innovation, and sustainability in every product we make.</p>
+        <div class="breadcrumb"><a href="/">Home</a><span>›</span><span class="current">About Us</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-strip">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item"><div class="stat-num">50+</div><div class="stat-label">Years of Experience</div></div>
+        <div class="stat-item"><div class="stat-num">8+</div><div class="stat-label">Product Categories</div></div>
+        <div class="stat-item"><div class="stat-num">500+</div><div class="stat-label">Satisfied Clients</div></div>
+        <div class="stat-item"><div class="stat-num">ISO</div><div class="stat-label">Certified Quality</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-full">
+    <div class="container">
+      <div class="about-full-grid">
+        <div class="about-img-tall">
+          <img src="https://www.truderpackaging.com/img/whoweare.webp" alt="Truder Packaging team Vadodara" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:80px;\'><i class=\'fa-solid fa-industry\'></i></div>'">
+      </div>
+        <div>
+          <div class="tag">Who We Are</div>
+          <h2 class="section-title">Gujarat's Most <span>Trusted Packaging Partner</span></h2>
+          <p style="font-size:15px;color:var(--gray);line-height:1.8;margin:16px 0 32px">Truder Packaging Industries is one of Vadodara's most trusted plastic packaging manufacturers, operating from our facility at 882/5 Makarpura GIDC Industrial Estate, Gujarat. For over 50 years, we have been the go-to packaging partner for businesses ranging from local retailers and e-commerce brands to hospitals, industrial manufacturers, and FMCG companies across India.</p>
+          <div class="about-tabs">
+            <div class="about-tab active" onclick="switchTab(this,'tab-mission')">Mission</div>
+            <div class="about-tab" onclick="switchTab(this,'tab-strategy')">Strategy</div>
+            <div class="about-tab" onclick="switchTab(this,'tab-eco')">Eco-Friendly</div>
+            <div class="about-tab" onclick="switchTab(this,'tab-commitment')">Commitment</div>
+          </div>
+          <div id="tab-mission" class="about-tab-content active">
+            <h3>Our Mission</h3>
+            <p>To be the most reliable and innovative plastic packaging manufacturer in Gujarat, delivering solutions that balance quality, functionality, and environmental responsibility. We aim to empower businesses with packaging that not only meets their operational needs but also contributes to a cleaner, greener future for India.</p>
+          </div>
+          <div id="tab-strategy" class="about-tab-content">
+            <h3>Our Strategy</h3>
+            <p>We invest continuously in modern machinery, skilled staff, and sustainable raw materials. Our production process is designed to minimize waste while maximizing output quality. By fostering close partnerships with our clients, we tailor every packaging solution to their specific requirements and industry standards.</p>
+          </div>
+          <div id="tab-eco" class="about-tab-content">
+            <h3>Eco-Friendly Approach</h3>
+            <p>Truder Packaging prioritizes environmental responsibility in every decision we make. We manufacture biodegradable and recyclable packaging options wherever possible, and we're actively reducing our plastic waste footprint. We are proud supporters of India's Swachh Bharat Abhiyan.</p>
+          </div>
+          <div id="tab-commitment" class="about-tab-content">
+            <h3>Our Commitment</h3>
+            <p>From raw material selection to final product delivery, we maintain the highest standards of quality, reliability, and customer satisfaction. Every batch is quality-checked. Every order dispatched on time. Every client receives honest, responsive, professional service, without exception.</p>
+          </div>
+          <a href="/contact" class="btn-primary" style="margin-top:32px">Work With Us →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="swachh-section">
+    <div class="container">
+      <div class="swachh-inner">
+        <div>
+          <div class="tag">Swachh Bharat Abhiyan</div>
+          <h2>"Truder Packaging for a <span>Cleaner India</span>"</h2>
+          <p>Inspired by Mahatma Gandhi's vision of cleanliness and hygiene, Truder Packaging is committed to manufacturing eco-friendly and recyclable plastic solutions that actively support the national Swachh Bharat mission.</p>
+          <p>Together, we can reduce plastic waste, promote hygiene across India, and build a greener tomorrow for future generations. Our biodegradable packaging options and responsible manufacturing practices are our contribution to this national movement.</p>
+          <a href="/contact" class="btn-primary">Join Our Green Initiative →</a>
+        </div>
+        <div class="swachh-badge">
+          <div class="icon"><i class="fa-solid fa-leaf"></i></div>
+          <p>Proud supporter of</p>
+          <strong>Swachh Bharat Abhiyan</strong>
+          <p style="margin-top:12px;font-size:12px">Eco-friendly packaging options available</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="team-section">
+    <div class="container">
+      <div class="tag">Our Team</div>
+      <h2 class="section-title">The People Behind <span>Truder</span></h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-avatar">
+            <img src="https://www.truderpackaging.com/img/yesh-kukreja.jpeg" alt="Yesh Kukreja Director Truder Packaging" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'initials\'>YK</span>'">
+          </div>
+          <h3>Yesh Kukreja</h3>
+          <div class="role">Director</div>
+          <a href="https://www.linkedin.com/in/yash-kukrejatruderpackaging" class="team-linkedin" target="_blank">🔗 LinkedIn Profile</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+       <a href="/" class="logo"><img src="truder-logo.webp" alt="Truder Packaging Industries"></a>
+        <p>Vadodara's leading plastic packaging manufacturer since 1972.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/company/truder-packaging/" class="social-btn" target="_blank">in</a>
+          <a href="https://web.whatsapp.com/send?phone=9408342280" class="social-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/products">Products</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul class="footer-links">
+          <li><a href="/product?id=polybags">Polybags</a></li>
+          <li><a href="/product?id=polymailers">Poly Mailers</a></li>
+          <li><a href="/product?id=shrinkrolls">Shrink Rolls</a></li>
+          <li><a href="/product?id=garbagebags">Garbage Bags</a></li>
+          <li><a href="/product?id=ldpe">LDPE Rolls</a></li>
+          <li><a href="/product?id=biomedical">Biomedical Bags</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="truder.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Truder Packaging</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="truder.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo"><img src="truder-logo.webp" alt="Truder Packaging Industries"></a>
+    <nav id="main-nav">
+      <a href="/">Home</a>
+      <a href="/about">About Us</a>
+      <div class="nav-dropdown">
+        <a href="/products">Products</a>
+        <div class="dropdown-menu">
+          <a href="/product?id=polybags">Polybags</a>
+          <a href="/product?id=polymailers">Poly Mailers</a>
+          <a href="/product?id=printedliners">Printed Liners</a>
+          <a href="/product?id=shrinkrolls">Printed Shrink Rolls</a>
+          <a href="/product?id=garbagebags">Garbage Bags</a>
+          <a href="/product?id=ldpe">LDPE Industrial Rolls</a>
+          <a href="/product?id=biomedical">Biomedical Waste Bags</a>
+          <a href="/product?id=diaperbags">Diaper Bags</a>
+        </div>
+      </div>
+      <a href="/contact">Contact Us</a>
+    </nav>
+    <a href="/contact" class="header-cta">Get a Quote</a>
+    <div class="hamburger" onclick="toggleMobile()"><span></span><span></span><span></span></div>
+  </div>
+</header>
+<a href="https://web.whatsapp.com/send?phone=9408342280" class="whatsapp-float" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="tag">Get In Touch</div>
+        <h1>Contact <span>Truder Packaging</span></h1>
+        <p>Looking for quality plastic packaging from a trusted manufacturer in Vadodara? We're here to help with bulk orders, samples, and custom requirements.</p>
+        <div class="breadcrumb"><a href="/">Home</a><span>›</span><span class="current">Contact Us</span></div>
+      </div>
+    </div>
+  </section>
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2>Let's Talk Packaging</h2>
+          <p>Whether you need a bulk order, want to request samples, or have a custom packaging requirement — our team is ready to help. We respond to all inquiries within 24 hours.</p>
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="contact-item-body"><h4>Factory Address</h4><p>882/5 Makarpura GIDC Industrial Estate<br>Vadodara, Gujarat – 390010</p></div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
+              <div class="contact-item-body"><h4>Phone Numbers</h4><p><a href="tel:+919408342280">+91 9408342280</a><br><a href="tel:+916352872800">+91 6352872800</a><br><a href="tel:+919426022420">+91 9426022420</a></p></div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div class="contact-item-body"><h4>Email</h4><p><a href="mailto:sales@truderpackaging.com">sales@truderpackaging.com</a></p></div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fa-regular fa-clock"></i></div>
+              <div class="contact-item-body"><h4>Working Hours</h4><p>Monday to Saturday: 8:00 AM – 8:00 PM<br>Sunday: Closed</p></div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fa-brands fa-whatsapp"></i></div>
+              <div class="contact-item-body"><h4>WhatsApp</h4><p><a href="https://web.whatsapp.com/send?phone=9408342280" target="_blank">Chat with us on WhatsApp →</a></p></div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-card">
+          <h3>Send Us a Message</h3>
+          <form onsubmit="handleForm(event)">
+            <div class="form-row">
+              <div class="form-group"><label>Your Name *</label><input type="text" placeholder="Rajesh Patel" required></div>
+              <div class="form-group"><label>Company Name</label><input type="text" placeholder="ABC Industries"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>Phone Number *</label><input type="tel" placeholder="+91 98765 43210" required></div>
+              <div class="form-group"><label>Email Address</label><input type="email" placeholder="rajesh@company.com"></div>
+            </div>
+            <div class="form-group">
+              <label>Product Interested In</label>
+              <select>
+                <option value="">Select a product...</option>
+                <option>Polybags</option>
+                <option>Poly Mailers</option>
+                <option>Printed Liners</option>
+                <option>Printed Shrink Rolls</option>
+                <option>Garbage Bags</option>
+                <option>LDPE Industrial Rolls</option>
+                <option>Biomedical Waste Bags</option>
+                <option>Diaper Bags</option>
+                <option>Multiple Products</option>
+              </select>
+            </div>
+            <div class="form-group"><label>Your Message</label><textarea placeholder="Tell us about your packaging requirements, quantities, custom specifications..."></textarea></div>
+            <button type="submit" class="btn-primary" style="width:100%;justify-content:center">Send Enquiry →</button>
+          </form>
+          <div id="form-success" style="display:none;text-align:center;padding:20px;background:var(--teal-pale);border-radius:6px;margin-top:16px">
+            <div style="font-size:32px;margin-bottom:8px;color:var(--teal)"><i class="fa-solid fa-circle-check"></i></div>
+            <strong style="color:var(--dark)">Message Sent!</strong>
+            <p style="font-size:13px;color:var(--gray);margin-top:4px">We'll contact you within 24 hours.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="map-section">
+    <div class="container">
+      <div class="map-placeholder">
+        <div class="map-info">
+          <div class="map-pin"><i class="fa-solid fa-location-dot"></i></div>
+          <p><strong>882/5 Makarpura GIDC Industrial Estate</strong><br>Vadodara, Gujarat – 390010</p>
+          <a href="https://maps.google.com/?q=Makarpura+GIDC+Vadodara+Gujarat" target="_blank" class="btn-primary" style="margin-top:16px">Open in Google Maps →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+       <a href="/" class="logo"><img src="truder-logo.webp" alt="Truder Packaging Industries"></a>
+        <p>Vadodara's leading plastic packaging manufacturer since 1972.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/company/truder-packaging/" class="social-btn" target="_blank">in</a>
+          <a href="https://web.whatsapp.com/send?phone=9408342280" class="social-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/products">Products</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul class="footer-links">
+          <li><a href="/product?id=polybags">Polybags</a></li>
+          <li><a href="/product?id=polymailers">Poly Mailers</a></li>
+          <li><a href="/product?id=shrinkrolls">Shrink Rolls</a></li>
+          <li><a href="/product?id=garbagebags">Garbage Bags</a></li>
+          <li><a href="/product?id=ldpe">LDPE Rolls</a></li>
+          <li><a href="/product?id=biomedical">Biomedical Bags</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="truder.js"></script>
+</body>
+</html>

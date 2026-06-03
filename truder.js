@@ -1,4 +1,3 @@
-// ── PRODUCT DATA ──
 const products = {
   polybags: {
     name: "Polybags",
@@ -180,26 +179,39 @@ const products = {
 
 const productKeys = Object.keys(products);
 
-// ── PAGE NAVIGATION W/ HISTORY API ──
-function showPage(page, skipHistory = false) {
-  document
-    .querySelectorAll(".page")
-    .forEach((p) => p.classList.remove("active"));
-
-  const target = document.getElementById("page-" + page);
-  if (target) target.classList.add("active");
-
-  window.scrollTo({ top: 0, behavior: "smooth" });
-
-  if (!skipHistory) {
-    const path = page === "home" ? "/" : "/" + page;
-    history.pushState({ type: "page", id: page }, "", path);
+document.addEventListener("DOMContentLoaded", () => {
+  const homeGrid = document.getElementById("home-products-grid");
+  if (homeGrid) {
+    homeGrid.innerHTML = productKeys.slice(0, 6).map(buildProductCard).join("");
   }
-}
 
-function showProductDetail(key, skipHistory = false) {
+  const allGrid = document.getElementById("all-products-grid");
+  if (allGrid) {
+    allGrid.innerHTML = productKeys.map(buildProductCard).join("");
+  }
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const productId = urlParams.get("id");
+
+  if (
+    window.location.pathname.includes("/product") &&
+    !window.location.pathname.includes("/products")
+  ) {
+    if (productId && products[productId]) {
+      populateProductDetail(productId);
+    } else {
+      window.location.href = "/products";
+    }
+  }
+});
+
+function populateProductDetail(key) {
   const p = products[key];
-  document.getElementById("detail-tag").textContent = "Our Products";
+
+  const detailTag = document.getElementById("detail-tag");
+  if (!detailTag) return;
+
+  detailTag.textContent = "Our Products";
   document.getElementById("detail-title").innerHTML = p.name;
   document.getElementById("detail-subtitle").textContent = p.subtitle;
   document.getElementById("detail-breadcrumb").textContent = p.name;
@@ -227,44 +239,13 @@ function showProductDetail(key, skipHistory = false) {
 
   const relatedEl = document.getElementById("related-products");
   const others = productKeys.filter((k) => k !== key).slice(0, 3);
-  relatedEl.innerHTML = others.map((k) => buildProductCard(k)).join("");
-
-  showPage("product-detail", true);
-
-  if (!skipHistory) {
-    history.pushState({ type: "product", id: key }, "", "/product/" + key);
-  }
-}
-
-// ── ROUTER INITIALIZATION ──
-window.addEventListener("popstate", handleRoute);
-window.addEventListener("DOMContentLoaded", handleRoute);
-
-function handleRoute() {
-  const path = window.location.pathname;
-
-  if (path.startsWith("/product/")) {
-    const key = path.replace("/product/", "");
-    if (products[key]) {
-      showProductDetail(key, true);
-    } else {
-      showPage("products", true);
-    }
-  } else {
-    let page = path.replace("/", "");
-    if (page === "") page = "home";
-
-    if (document.getElementById("page-" + page)) {
-      showPage(page, true);
-    } else {
-      showPage("home", true);
-    }
-  }
+  if (relatedEl)
+    relatedEl.innerHTML = others.map((k) => buildProductCard(k)).join("");
 }
 
 function buildProductCard(key) {
   const p = products[key];
-  return `<div class="product-card" onclick="showProductDetail('${key}')">
+  return `<div class="product-card" onclick="window.location.href='/product?id=${key}'">
     <div class="product-card-img">
       <div class="product-emoji" style="position: absolute;">${p.emoji}</div>
       <img src="${p.img}" alt="${p.name} manufacturer Vadodara" onerror="this.style.display='none'" style="position: relative; z-index: 1;">
@@ -278,16 +259,6 @@ function buildProductCard(key) {
   </div>`;
 }
 
-// ── RENDER PRODUCT GRIDS ──
-document.getElementById("home-products-grid").innerHTML = productKeys
-  .slice(0, 6)
-  .map(buildProductCard)
-  .join("");
-document.getElementById("all-products-grid").innerHTML = productKeys
-  .map(buildProductCard)
-  .join("");
-
-// ── TABS ──
 function switchTab(el, tabId) {
   el.closest(".about-full-grid, .about-full")
     .querySelectorAll(".about-tab")
@@ -299,7 +270,6 @@ function switchTab(el, tabId) {
   document.getElementById(tabId).classList.add("active");
 }
 
-// ── MOBILE NAV ──
 function toggleMobile() {
   document.getElementById("main-nav").classList.toggle("open");
 }
@@ -307,7 +277,6 @@ function closeMobile() {
   document.getElementById("main-nav").classList.remove("open");
 }
 
-// ── FORM ──
 function handleForm(e) {
   e.preventDefault();
   document.getElementById("form-success").style.display = "block";
