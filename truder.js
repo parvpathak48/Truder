@@ -5,7 +5,7 @@ const products = {
     h1: "Premium Polybags Manufacturer in Vadodara",
     subtitle:
       "Strong, flexible HDPE/LDPE bags in custom sizes for retail, industrial, and e-commerce.",
-    desc: "If your business needs reliable, cost-effective polybags at scale, Truder Packaging has you covered. We manufacture polybags in a wide variety of sizes, thicknesses, and finishes to suit retail packaging, industrial storage, e-commerce fulfilment, and more. Our polybags are made from high-quality LDPE and HDPE materials, giving them the strength to protect your products without adding unnecessary weight. Custom printing is handled in-house — your brand, your colours, your logo.",
+    desc: "If your business needs reliable, cost-effective polybags at scale, Truder Packaging has you covered. We manufacture polybags in a wide variety of sizes, thicknesses, and finishes to suit retail packaging, industrial storage, e-commerce fulfilment, and more. Our polybags are made from high-quality LDPE and HDPE materials, giving them the strength to protect your products without adding unnecessary weight. Custom printing is handled in-house. Your brand, your colours, your logo.",
     img: "https://www.truderpackaging.com/img/frame1.webp",
     emoji: '<i class="fa-solid fa-bag-shopping"></i>',
     specs: [
@@ -24,10 +24,10 @@ const products = {
   },
   polymailers: {
     name: "Poly Mailers",
-    h1: "Custom Poly Mailers for E-Commerce Vadodara",
+    h1: "Custom Poly Mailers for E-Commerce in Vadodara",
     subtitle:
       "Lightweight, tamper-evident courier bags built for e-commerce shipping with custom branding.",
-    desc: "Running an e-commerce business? Your packaging is the first physical impression your customer gets. Truder's poly mailers are lightweight, tear-resistant, and waterproof — everything your courier bags need to be. We manufacture tamper-evident poly mailers with permanent self-seal strips, so your shipments stay secure from warehouse to doorstep. Available in custom sizes and with full-colour printing to reinforce your brand.",
+    desc: "Running an e-commerce business? Your packaging is the first physical impression your customer gets. Truder's poly mailers are lightweight, tear-resistant, and waterproof, everything your courier bags need to be. We manufacture tamper-evident poly mailers with permanent self-seal strips, so your shipments stay secure from warehouse to doorstep. Available in custom sizes and with full-colour printing to reinforce your brand.",
     img: "https://www.truderpackaging.com/img/poly mailer.jpg",
     emoji: '<i class="fa-solid fa-envelope-open-text"></i>',
     specs: [
@@ -46,7 +46,7 @@ const products = {
   },
   printedliners: {
     name: "Printed Liners",
-    h1: "Custom Printed Liners Manufacturer Vadodara",
+    h1: "Custom Printed Liners Manufacturer in Vadodara",
     subtitle:
       "Heavy-duty plastic liners with custom branding for industrial and commercial use.",
     desc: "Truder Packaging manufactures heavy-duty printed liners designed for industrial and commercial applications. These liners serve as inner packaging to protect bulk goods during storage and transit, and with custom printing, they double as a powerful branding tool. Made from robust LDPE film, our printed liners offer excellent strength, moisture resistance, and consistent quality. Available in custom widths, lengths, and thicknesses.",
@@ -68,7 +68,7 @@ const products = {
   },
   shrinkrolls: {
     name: "Printed Shrink Rolls",
-    h1: "Printed Shrink Rolls Manufacturer Vadodara",
+    h1: "Printed Shrink Rolls Manufacturer in Vadodara",
     subtitle:
       "High-clarity shrink film with excellent shrink performance and custom printing for branded packaging.",
     desc: "Our printed shrink rolls are designed for businesses that need high-clarity, form-fitting packaging with a professional branded look. The film shrinks tightly around products when heat is applied, creating a clean, tamper-evident seal that looks great on shelves. Made from premium POF or PVC material, offering excellent transparency and shrink performance.",
@@ -90,7 +90,7 @@ const products = {
   },
   garbagebags: {
     name: "Garbage Bags",
-    h1: "Garbage Bags Manufacturer in Vadodara Bulk Supply",
+    h1: "Garbage Bags Manufacturer in Vadodara (Bulk Supply)",
     subtitle:
       "Thick, puncture-resistant garbage bags for household, commercial, and industrial use.",
     desc: "Truder Packaging manufactures durable, puncture-resistant garbage bags for homes, offices, hotels, hospitals, and industrial facilities. Our bags are thick enough to hold heavy waste without tearing, making them reliable for daily use. Available in multiple sizes (small, medium, large, jumbo) and in roll or flat-pack formats. Star seal and flat seal variants available.",
@@ -112,7 +112,7 @@ const products = {
   },
   ldpe: {
     name: "LDPE Industrial Rolls",
-    h1: "LDPE Industrial Rolls Supplier Vadodara",
+    h1: "LDPE Industrial Rolls Supplier in Vadodara",
     subtitle:
       "Heavy-duty Low Density Polyethylene rolls for construction, warehousing, and agriculture.",
     desc: "For heavy-duty industrial packaging, Truder's LDPE Industrial Rolls are the reliable choice. These wide, strong plastic films are used across construction, manufacturing, agriculture, and warehousing to wrap, protect, and store large goods. Our industrial rolls are manufactured from high-quality LDPE resin, offering excellent puncture resistance, flexibility, and moisture barrier properties.",
@@ -134,7 +134,7 @@ const products = {
   },
   biomedical: {
     name: "Biomedical Waste Bags",
-    h1: "Biomedical Waste Bags BMW Compliant, Vadodara",
+    h1: "Biomedical Waste Bags (BMW Compliant) in Vadodara",
     subtitle:
       "Color-coded, leak-proof biomedical waste bags as per BMW Management Rules 2016 for healthcare facilities.",
     desc: "Truder Packaging manufactures biomedical waste bags that comply with India's Biomedical Waste Management Rules 2016. Our bags are color-coded, leak-proof, and made from materials that prevent contamination and ensure safe disposal. We supply to hospitals, nursing homes, diagnostic labs, dental clinics, veterinary facilities, and pharmaceutical units across Gujarat.",
@@ -180,16 +180,24 @@ const products = {
 
 const productKeys = Object.keys(products);
 
-// ── PAGE NAVIGATION ──
-function showPage(page) {
+// ── PAGE NAVIGATION W/ HISTORY API ──
+function showPage(page, skipHistory = false) {
   document
     .querySelectorAll(".page")
     .forEach((p) => p.classList.remove("active"));
-  document.getElementById("page-" + page).classList.add("active");
+
+  const target = document.getElementById("page-" + page);
+  if (target) target.classList.add("active");
+
   window.scrollTo({ top: 0, behavior: "smooth" });
+
+  if (!skipHistory) {
+    const path = page === "home" ? "/" : "/" + page;
+    history.pushState({ type: "page", id: page }, "", path);
+  }
 }
 
-function showProductDetail(key) {
+function showProductDetail(key, skipHistory = false) {
   const p = products[key];
   document.getElementById("detail-tag").textContent = "Our Products";
   document.getElementById("detail-title").innerHTML = p.name;
@@ -198,14 +206,12 @@ function showProductDetail(key) {
   document.getElementById("detail-h1").textContent = p.h1;
   document.getElementById("detail-desc").textContent = p.desc;
 
-  // FIXED: CSS Layering instead of onerror injection
   const imgEl = document.getElementById("detail-img");
   imgEl.innerHTML = `
     <div style="position: absolute; font-size: 80px; opacity: 0.4;">${p.emoji}</div>
     <img src="${p.img}" alt="${p.h1}" onerror="this.style.display='none'" style="width:100%; height:100%; object-fit:cover; position:relative; z-index:1;">
   `;
 
-  // Specs
   const specsEl = document.getElementById("detail-specs");
   specsEl.innerHTML = p.specs
     .map(
@@ -214,23 +220,50 @@ function showProductDetail(key) {
     )
     .join("");
 
-  // Apps
   const appsEl = document.getElementById("detail-apps");
   appsEl.innerHTML = p.apps
     .map((a) => `<span class="app-tag">${a}</span>`)
     .join("");
 
-  // Related
   const relatedEl = document.getElementById("related-products");
   const others = productKeys.filter((k) => k !== key).slice(0, 3);
   relatedEl.innerHTML = others.map((k) => buildProductCard(k)).join("");
 
-  showPage("product-detail");
+  showPage("product-detail", true);
+
+  if (!skipHistory) {
+    history.pushState({ type: "product", id: key }, "", "/product/" + key);
+  }
+}
+
+// ── ROUTER INITIALIZATION ──
+window.addEventListener("popstate", handleRoute);
+window.addEventListener("DOMContentLoaded", handleRoute);
+
+function handleRoute() {
+  const path = window.location.pathname;
+
+  if (path.startsWith("/product/")) {
+    const key = path.replace("/product/", "");
+    if (products[key]) {
+      showProductDetail(key, true);
+    } else {
+      showPage("products", true);
+    }
+  } else {
+    let page = path.replace("/", "");
+    if (page === "") page = "home";
+
+    if (document.getElementById("page-" + page)) {
+      showPage(page, true);
+    } else {
+      showPage("home", true);
+    }
+  }
 }
 
 function buildProductCard(key) {
   const p = products[key];
-  // FIXED: CSS Layering instead of onerror injection
   return `<div class="product-card" onclick="showProductDetail('${key}')">
     <div class="product-card-img">
       <div class="product-emoji" style="position: absolute;">${p.emoji}</div>
@@ -244,6 +277,7 @@ function buildProductCard(key) {
     </div>
   </div>`;
 }
+
 // ── RENDER PRODUCT GRIDS ──
 document.getElementById("home-products-grid").innerHTML = productKeys
   .slice(0, 6)
