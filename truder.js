@@ -5,7 +5,7 @@ const products = {
     subtitle:
       "Strong, flexible HDPE/LDPE bags in custom sizes for retail, industrial, and e-commerce.",
     desc: "If your business needs reliable, cost-effective polybags at scale, Truder Packaging has you covered. We manufacture polybags in a wide variety of sizes, thicknesses, and finishes to suit retail packaging, industrial storage, e-commerce fulfilment, and more. Our polybags are made from high-quality LDPE and HDPE materials, giving them the strength to protect your products without adding unnecessary weight. Custom printing is handled in-house. Your brand, your colours, your logo.",
-    img: "https://www.truderpackaging.com/img/frame1.webp",
+    img: "IMG_6043.jpg",
     emoji: '<i class="fa-solid fa-bag-shopping"></i>',
     specs: [
       ["Material", "LDPE / HDPE"],
@@ -27,7 +27,7 @@ const products = {
     subtitle:
       "Lightweight, tamper-evident courier bags built for e-commerce shipping with custom branding.",
     desc: "Running an e-commerce business? Your packaging is the first physical impression your customer gets. Truder's poly mailers are lightweight, tear-resistant, and waterproof, everything your courier bags need to be. We manufacture tamper-evident poly mailers with permanent self-seal strips, so your shipments stay secure from warehouse to doorstep. Available in custom sizes and with full-colour printing to reinforce your brand.",
-    img: "https://www.truderpackaging.com/img/poly mailer.jpg",
+    img: "IMG_6113.jpg",
     emoji: '<i class="fa-solid fa-envelope-open-text"></i>',
     specs: [
       ["Seal Type", "Tamper-evident self-seal"],
@@ -137,7 +137,7 @@ const products = {
     subtitle:
       "Color-coded, leak-proof biomedical waste bags as per BMW Management Rules 2016 for healthcare facilities.",
     desc: "Truder Packaging manufactures biomedical waste bags that comply with India's Biomedical Waste Management Rules 2016. Our bags are color-coded, leak-proof, and made from materials that prevent contamination and ensure safe disposal. We supply to hospitals, nursing homes, diagnostic labs, dental clinics, veterinary facilities, and pharmaceutical units across Gujarat.",
-    img: "https://www.truderpackaging.com/img/frame1.webp",
+    img: "IMG_6131.jpg",
     emoji: '<i class="fa-solid fa-hospital"></i>',
     specs: [
       ["Compliance", "BMW Rules 2016"],
@@ -251,7 +251,7 @@ function buildProductCard(key) {
       <img src="${p.img}" alt="${p.name} manufacturer Vadodara" onerror="this.style.display='none'" style="position: relative; z-index: 1;">
     </div>
     <div class="product-card-body">
-      <div class="product-card-tag">Durable &amp; Eco-Friendly</div>
+      <div class="product-card-tag">Durable & Eco-Friendly</div>
       <h3>${p.name}</h3>
       <p>${p.subtitle}</p>
       <span class="product-card-link">Read More →</span>
