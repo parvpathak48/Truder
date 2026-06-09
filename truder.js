@@ -307,7 +307,9 @@ function buildProductCard(key) {
     .join("");
 
   return `
-    <div class="product-card">
+  <div class="product-card"
+       onclick="window.location.href='product?id=${key}'"
+       style="cursor:pointer;">
 
       <div class="product-card-img">
 
@@ -316,8 +318,15 @@ function buildProductCard(key) {
         ${
           p.images.length > 1
             ? `
-          <button class="img-nav prev" onclick="event.stopPropagation();changeImage(this,-1)">❮</button>
-          <button class="img-nav next" onclick="event.stopPropagation();changeImage(this,1)">❯</button>
+          <button class="img-nav prev"
+                  onclick="event.stopPropagation();changeImage(this,-1)">
+            ❮
+          </button>
+
+          <button class="img-nav next"
+                  onclick="event.stopPropagation();changeImage(this,1)">
+            ❯
+          </button>
         `
             : ""
         }
@@ -328,13 +337,16 @@ function buildProductCard(key) {
         <div class="product-card-tag">Durable & Eco-Friendly</div>
         <h3>${p.name}</h3>
         <p>${p.subtitle}</p>
-        <a href="product?id=${key}" class="product-card-link">
+
+        <a href="product?id=${key}"
+           onclick="event.stopPropagation();"
+           class="product-card-link">
           Read More →
         </a>
       </div>
 
-    </div>
-  `;
+  </div>
+`;
 }
 
 function changeImage(btn, direction) {
