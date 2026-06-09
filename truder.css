@@ -314,7 +314,7 @@ footer { background: var(--dark2); padding: 70px 0 0; }
     height: 34px;
     border: none;
     border-radius: 50%;
-    background:  var(--teal);
+    background: rgba(0,0,0,.6);
     color: white;
     cursor: pointer;
     z-index: 10;
