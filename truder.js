@@ -5,8 +5,13 @@ const products = {
     subtitle:
       "Strong, flexible HDPE/LDPE bags in custom sizes for retail, industrial, and e-commerce.",
     desc: "If your business needs reliable, cost-effective polybags at scale, Truder Packaging has you covered. We manufacture polybags in a wide variety of sizes, thicknesses, and finishes to suit retail packaging, industrial storage, e-commerce fulfilment, and more. Our polybags are made from high-quality LDPE and HDPE materials, giving them the strength to protect your products without adding unnecessary weight. Custom printing is handled in-house. Your brand, your colours, your logo.",
-    // img: "polyBags.webp",
-    images: ["polybag.webp", "polybag1.JPG", "polybag2.JPG", "polybag3.JPG"],
+    images: [
+      "polybag.webp",
+      "polybag1.JPG",
+      "polybag2.JPG",
+      "polybag3.JPG",
+      "polybag4.png",
+    ],
     emoji: '<i class="fa-solid fa-bag-shopping"></i>',
     specs: [
       ["Material", "LDPE / HDPE"],
@@ -28,7 +33,6 @@ const products = {
     subtitle:
       "Lightweight, tamper-evident courier bags built for e-commerce shipping with custom branding.",
     desc: "Running an e-commerce business? Your packaging is the first physical impression your customer gets. Truder's poly mailers are lightweight, tear-resistant, and waterproof, everything your courier bags need to be. We manufacture tamper-evident poly mailers with permanent self-seal strips, so your shipments stay secure from warehouse to doorstep. Available in custom sizes and with full-colour printing to reinforce your brand.",
-    // img: "polymailers.png",
     images: [
       "polymailers.png",
       "polymailer2.JPG",
