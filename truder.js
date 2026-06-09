@@ -38,6 +38,9 @@ const products = {
       "polymailer2.JPG",
       "polymailer3.JPG",
       "polymailer4.JPG",
+      "polymailer5.JPG",
+      "polymailer6.JPG",
+      "polymailer7.JPG",
     ],
     emoji: '<i class="fa-solid fa-envelope-open-text"></i>',
     specs: [
