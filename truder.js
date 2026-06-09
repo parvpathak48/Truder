@@ -233,12 +233,41 @@ function populateProductDetail(key) {
   document.getElementById("detail-desc").textContent = p.desc;
 
   const imgEl = document.getElementById("detail-img");
+
+  const imagesHtml = p.images
+    .map(
+      (img, i) => `
+      <img
+        src="${img}"
+        alt="${p.name}"
+        class="detail-image ${i === 0 ? "active" : ""}"
+      >
+    `,
+    )
+    .join("");
+
   imgEl.innerHTML = `
-    <div style="position: absolute; font-size: 80px; opacity: 0.4;">${p.emoji}</div>
-    <img src="${p.images[0]}"
-         alt="${p.h1}"
-         onerror="this.style.display='none'"
-         style="width:100%; height:100%; object-fit:cover; position:relative; z-index:1;">
+  <div class="detail-image-container">
+
+    ${imagesHtml}
+
+    ${
+      p.images.length > 1
+        ? `
+        <button class="detail-nav prev"
+                onclick="changeDetailImage(this,-1)">
+          ❮
+        </button>
+
+        <button class="detail-nav next"
+                onclick="changeDetailImage(this,1)">
+          ❯
+        </button>
+      `
+        : ""
+    }
+
+  </div>
   `;
 
   const specsEl = document.getElementById("detail-specs");
@@ -311,6 +340,21 @@ function buildProductCard(key) {
 function changeImage(btn, direction) {
   const container = btn.parentElement;
   const images = container.querySelectorAll(".card-image");
+
+  let current = [...images].findIndex((img) =>
+    img.classList.contains("active"),
+  );
+
+  images[current].classList.remove("active");
+
+  current = (current + direction + images.length) % images.length;
+
+  images[current].classList.add("active");
+}
+
+function changeDetailImage(btn, direction) {
+  const container = btn.parentElement;
+  const images = container.querySelectorAll(".detail-image");
 
   let current = [...images].findIndex((img) =>
     img.classList.contains("active"),
