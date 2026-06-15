@@ -44,8 +44,8 @@ nav a { color: black; text-decoration: none; font-size: 16px; font-weight: 500; 
 .nav-dropdown:hover .dropdown-menu { display: block; }
 .dropdown-menu a { display: block; padding: 10px 20px; color: rgba(255,255,255,0.7); font-size: 13px; }
 .dropdown-menu a:hover { color: var(--teal); background: rgba(2,149,163,0.08); }
-.header-cta { background: var(--teal); color: #fff; font-family: var(--font-head); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 10px 22px; border-radius: 3px; text-decoration: none; transition: background .2s; }
-.header-cta:hover { background: var(--teal-light); }
+/* .header-cta { background: var(--teal); color: #fff; font-family: var(--font-head); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 10px 22px; border-radius: 3px; text-decoration: none; transition: background .2s; }
+.header-cta:hover { background: var(--teal-light); } */
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
 .hamburger span { width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: all .3s; }
 

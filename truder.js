@@ -5,13 +5,7 @@ const products = {
     subtitle:
       "Strong, flexible HDPE/LDPE bags in custom sizes for retail, industrial, and e-commerce.",
     desc: "If your business needs reliable, cost-effective polybags at scale, Truder Packaging has you covered. We manufacture polybags in a wide variety of sizes, thicknesses, and finishes to suit retail packaging, industrial storage, e-commerce fulfilment, and more. Our polybags are made from high-quality LDPE and HDPE materials, giving them the strength to protect your products without adding unnecessary weight. Custom printing is handled in-house. Your brand, your colours, your logo.",
-    images: [
-      "polybag.webp",
-      "polybag1.JPG",
-      "polybag2.JPG",
-      "polybag3.JPG",
-      "polybag4.png",
-    ],
+    images: [],
     emoji: '<i class="fa-solid fa-bag-shopping"></i>',
     specs: [
       ["Material", "LDPE / HDPE"],
@@ -28,18 +22,17 @@ const products = {
     ],
   },
   polymailers: {
-    name: "Poly Mailers",
+    name: "Poly Mailer / Courier bags",
     h1: "Custom Poly Mailers for E-Commerce in Vadodara",
     subtitle:
       "Lightweight, tamper-evident courier bags built for e-commerce shipping with custom branding.",
     desc: "Running an e-commerce business? Your packaging is the first physical impression your customer gets. Truder's poly mailers are lightweight, tear-resistant, and waterproof, everything your courier bags need to be. We manufacture tamper-evident poly mailers with permanent self-seal strips, so your shipments stay secure from warehouse to doorstep. Available in custom sizes and with full-colour printing to reinforce your brand.",
     images: [
-      "polymailers.png",
-      "polymailer2.JPG",
-      "polymailer3.JPG",
-      "polymailer4.JPG",
-      "polymailer5.JPG",
-      "polymailer6.JPG",
+      "../polymailer/polymailer.webp",
+      "../polymailer/polymailer1.JPG",
+      "../polymailer/polymailer2.JPG",
+      "../polymailer/polymailer3.JPG",
+      "../polymailer/polymailer4.png",
     ],
     emoji: '<i class="fa-solid fa-envelope-open-text"></i>',
     specs: [
@@ -62,7 +55,7 @@ const products = {
     subtitle:
       "Heavy-duty plastic liners with custom branding for industrial and commercial use.",
     desc: "Truder Packaging manufactures heavy-duty printed liners designed for industrial and commercial applications. These liners serve as inner packaging to protect bulk goods during storage and transit, and with custom printing, they double as a powerful branding tool. Made from robust LDPE film, our printed liners offer excellent strength, moisture resistance, and consistent quality. Available in custom widths, lengths, and thicknesses.",
-    images: ["printedliner.png"],
+    images: [],
     emoji: '<i class="fa-solid fa-layer-group"></i>',
     specs: [
       ["Material", "LDPE Film"],
@@ -84,7 +77,7 @@ const products = {
     subtitle:
       "High-clarity shrink film with excellent shrink performance and custom printing for branded packaging.",
     desc: "Our printed shrink rolls are designed for businesses that need high-clarity, form-fitting packaging with a professional branded look. The film shrinks tightly around products when heat is applied, creating a clean, tamper-evident seal that looks great on shelves. Made from premium POF or PVC material, offering excellent transparency and shrink performance.",
-    images: ["shrinkrolls.png"],
+    images: [],
     emoji: '<i class="fa-solid fa-boxes-packing"></i>',
     specs: [
       ["Material", "POF / PVC Film"],
@@ -101,12 +94,12 @@ const products = {
     ],
   },
   garbagebags: {
-    name: "Garbage Bags",
+    name: "Garbage Dustbin Bags",
     h1: "Garbage Bags Manufacturer in Vadodara (Bulk Supply)",
     subtitle:
       "Thick, puncture-resistant garbage bags for household, commercial, and industrial use.",
     desc: "Truder Packaging manufactures durable, puncture-resistant garbage bags for homes, offices, hotels, hospitals, and industrial facilities. Our bags are thick enough to hold heavy waste without tearing, making them reliable for daily use. Available in multiple sizes (small, medium, large, jumbo) and in roll or flat-pack formats. Star seal and flat seal variants available.",
-    images: ["garbage.png"],
+    images: ["../garbage/garbage.png"],
     emoji: '<i class="fa-solid fa-trash-can"></i>',
     specs: [
       ["Seal", "Star seal & flat seal"],
@@ -128,7 +121,7 @@ const products = {
     subtitle:
       "Heavy-duty Low Density Polyethylene rolls for construction, warehousing, and agriculture.",
     desc: "For heavy-duty industrial packaging, Truder's LDPE Industrial Rolls are the reliable choice. These wide, strong plastic films are used across construction, manufacturing, agriculture, and warehousing to wrap, protect, and store large goods. Our industrial rolls are manufactured from high-quality LDPE resin, offering excellent puncture resistance, flexibility, and moisture barrier properties.",
-    images: ["ldpe.png"],
+    images: ["../ldpe/ldpe.png"],
     emoji: '<i class="fa-solid fa-gear"></i>',
     specs: [
       ["Material", "LDPE Resin"],
@@ -150,7 +143,7 @@ const products = {
     subtitle:
       "Color-coded, leak-proof biomedical waste bags as per BMW Management Rules 2016 for healthcare facilities.",
     desc: "Truder Packaging manufactures biomedical waste bags that comply with India's Biomedical Waste Management Rules 2016. Our bags are color-coded, leak-proof, and made from materials that prevent contamination and ensure safe disposal. We supply to hospitals, nursing homes, diagnostic labs, dental clinics, veterinary facilities, and pharmaceutical units across Gujarat.",
-    images: ["biomedical.png", "biomedical2.png"],
+    images: ["../biomedical/biomedical.png", "../biomedical/biomedical2.png"],
     emoji: '<i class="fa-solid fa-hospital"></i>',
     specs: [
       ["Compliance", "BMW Rules 2016"],
@@ -166,28 +159,28 @@ const products = {
       "Pharmaceutical units",
     ],
   },
-  diaperbags: {
-    name: "Diaper Bags",
-    h1: "Diaper Bags Manufacturer in Vadodara",
-    subtitle:
-      "Soft, hygienic packaging bags for diaper manufacturers and baby product brands. Plain and printed.",
-    desc: "Truder Packaging supplies soft, hygienic, and attractive diaper bags for diaper manufacturers, baby product brands, and maternity hospitals. Our diaper bags are made from food-grade, safe plastic materials that are gentle on sensitive baby products. Available in plain and fully printed variants with custom sizes, zip-lock options, and resealable designs on request.",
-    images: ["diaperbag.png"],
-    emoji: '<i class="fa-solid fa-baby"></i>',
-    specs: [
-      ["Material", "Food-grade plastic"],
-      ["Print", "Plain & custom printed"],
-      ["Closure", "Zip-lock / resealable"],
-      ["Safety", "Baby-safe materials"],
-    ],
-    apps: [
-      "Diaper brand packaging",
-      "Baby product retail",
-      "Maternity hospitals",
-      "Baby accessory bundling",
-      "Export packaging",
-    ],
-  },
+  // diaperbags: {
+  //   name: "Diaper Bags",
+  //   h1: "Diaper Bags Manufacturer in Vadodara",
+  //   subtitle:
+  //     "Soft, hygienic packaging bags for diaper manufacturers and baby product brands. Plain and printed.",
+  //   desc: "Truder Packaging supplies soft, hygienic, and attractive diaper bags for diaper manufacturers, baby product brands, and maternity hospitals. Our diaper bags are made from food-grade, safe plastic materials that are gentle on sensitive baby products. Available in plain and fully printed variants with custom sizes, zip-lock options, and resealable designs on request.",
+  //   images: ["diaperbag.png"],
+  //   emoji: '<i class="fa-solid fa-baby"></i>',
+  //   specs: [
+  //     ["Material", "Food-grade plastic"],
+  //     ["Print", "Plain & custom printed"],
+  //     ["Closure", "Zip-lock / resealable"],
+  //     ["Safety", "Baby-safe materials"],
+  //   ],
+  //   apps: [
+  //     "Diaper brand packaging",
+  //     "Baby product retail",
+  //     "Maternity hospitals",
+  //     "Baby accessory bundling",
+  //     "Export packaging",
+  //   ],
+  // },
 };
 
 const productKeys = Object.keys(products);
@@ -209,13 +202,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const productId = urlParams.get("id");
 
   if (
-    window.location.pathname.includes("/product") &&
-    !window.location.pathname.includes("/products")
+    window.location.pathname.includes("/product.html") &&
+    !window.location.pathname.includes("/products.html")
   ) {
     if (productId && products[productId]) {
       populateProductDetail(productId);
     } else {
-      window.location.href = "/products";
+      window.location.href = "/products.html";
     }
   }
 });
@@ -314,7 +307,7 @@ function buildProductCard(key) {
 
   return `
   <div class="product-card"
-       onclick="window.location.href='product?id=${key}'"
+       onclick="window.location.href='product.html?id=${key}'"
        style="cursor:pointer;">
 
       <div class="product-card-img">
@@ -344,7 +337,7 @@ function buildProductCard(key) {
         <h3>${p.name}</h3>
         <p>${p.subtitle}</p>
 
-        <a href="product?id=${key}"
+        <a href="product.html?id=${key}"
            onclick="event.stopPropagation();"
            class="product-card-link">
           Read More →
