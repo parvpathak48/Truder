@@ -22,7 +22,7 @@ const products = {
     ],
   },
   polymailers: {
-    name: "Poly Mailer / Courier bags",
+    name: "Poly Mailers / Courier bags",
     h1: "Custom Poly Mailers/Courier bags for E-Commerce in Vadodara",
     subtitle:
       "Lightweight, tamper-evident courier bags built for e-commerce shipping with custom branding.",
