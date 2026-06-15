@@ -121,7 +121,12 @@ const products = {
     subtitle:
       "Heavy-duty Low Density Polyethylene rolls for construction, warehousing, and agriculture.",
     desc: "For heavy-duty industrial packaging, Truder's LDPE Industrial Rolls are the reliable choice. These wide, strong plastic films are used across construction, manufacturing, agriculture, and warehousing to wrap, protect, and store large goods. Our industrial rolls are manufactured from high-quality LDPE resin, offering excellent puncture resistance, flexibility, and moisture barrier properties.",
-    images: ["../ldpe/ldpe.png"],
+    images: [
+      "../ldpe/ldpe.png",
+      "../ldpe/ldpe1.png",
+      "../ldpe/ldpe2.png",
+      "../ldpe/ldpe3.png",
+    ],
     emoji: '<i class="fa-solid fa-gear"></i>',
     specs: [
       ["Material", "LDPE Resin"],
