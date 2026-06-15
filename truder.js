@@ -23,7 +23,7 @@ const products = {
   },
   polymailers: {
     name: "Poly Mailer / Courier bags",
-    h1: "Custom Poly Mailers for E-Commerce in Vadodara",
+    h1: "Custom Poly Mailers/Courier bags for E-Commerce in Vadodara",
     subtitle:
       "Lightweight, tamper-evident courier bags built for e-commerce shipping with custom branding.",
     desc: "Running an e-commerce business? Your packaging is the first physical impression your customer gets. Truder's poly mailers are lightweight, tear-resistant, and waterproof, everything your courier bags need to be. We manufacture tamper-evident poly mailers with permanent self-seal strips, so your shipments stay secure from warehouse to doorstep. Available in custom sizes and with full-colour printing to reinforce your brand.",
